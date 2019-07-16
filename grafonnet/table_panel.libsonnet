@@ -18,6 +18,8 @@
     min_span=null,
     datasource=null,
     styles=[],
+    transform='table',
+    columns=null,
   ):: {
     type: 'table',
     title: title,
@@ -28,7 +30,8 @@
     ],
     styles: styles,
     [if description != null then 'description']: description,
-    transform: 'table',
+    transform: transform,
+    columns: columns,
     _nextTarget:: 0,
     addTarget(target):: self {
       // automatically ref id in added targets.
